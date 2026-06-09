@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background-color: var(--background);
+  background-color: #fff;
   color: var(--foreground);
   height: 100svh;
   width: 100%;
@@ -39,5 +39,5 @@
 
 .hero-content h1 {
   font-size: 6vw;
-  line-height: 1;
+  line-height: 1.25em;
 }

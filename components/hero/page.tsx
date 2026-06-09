@@ -13,8 +13,40 @@ gsap.registerPlugin(CustomEase, SplitText);
 CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
 const Hero = () => {
+  const scope = useRef(null);
+
+  useGSAP(
+    () => {
+      if (!scope.current) return;
+
+      const splitTexts = SplitText.create("p, h1, a, .logo", {
+        type: "lines",
+        linesClass: "line",
+        mask: "lines",
+      });
+
+      console.log(splitTexts);
+
+      gsap.set(".line", {
+        y: "100%",
+        opacity: 0,
+      });
+
+      const tl = gsap.timeline();
+
+      tl.to(".line", {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 1,
+        ease: "hop",
+        delay: 4,
+      });
+    },
+    { scope },
+  );
   return (
-    <div className="hero border">
+    <div className="hero border" ref={scope}>
       <div className="nav">
         <div className="logo">EVELYN NOLAN</div>
         <div className="links">
