@@ -22,6 +22,11 @@ const frama = localFont({
       weight: "400",
       style: "normal",
     },
+    {
+      path: "../fonts/PPFrama-Black.otf",
+      weight: "900",
+      style: "normal",
+    },
   ],
   variable: "--font-frama",
 });
