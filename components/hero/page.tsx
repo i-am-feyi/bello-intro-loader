@@ -2,9 +2,19 @@
 
 import "./hero.css";
 
+import gsap from "gsap";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import { CustomEase } from "gsap/CustomEase";
+
+gsap.registerPlugin(CustomEase, SplitText);
+
+CustomEase.create("hop", "0.9, 0, 0.1, 1");
+
 const Hero = () => {
   return (
-    <div className="hero border border-blue-500">
+    <div className="hero border">
       <div className="nav">
         <div className="logo">EVELYN NOLAN</div>
         <div className="links">
